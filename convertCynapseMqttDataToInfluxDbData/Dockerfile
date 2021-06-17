@@ -13,8 +13,8 @@ COPY requirements.txt .
 # install dependencies
 RUN pip install -r requirements.txt
 
-ENV http_proxy= 
-ENV https_proxy=
+#ENV http_proxy= 
+#ENV https_proxy=
 
 # copy the content of the local src directory to the working directory
 COPY src/ .
