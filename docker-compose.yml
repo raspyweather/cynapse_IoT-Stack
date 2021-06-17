@@ -64,7 +64,7 @@ services:
     networks:
       - cynapse-data-network
     volumes:
-      - chronograf-volume:./data-chonograf
+      - ./data-chonograf:chronograf-volume
     depends_on:
       - influxdb
     environment:
