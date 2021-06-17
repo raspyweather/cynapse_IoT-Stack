@@ -7,8 +7,8 @@ WORKDIR /code
 # copy the dependencies file to the working directory
 COPY requirements.txt .
 
-ENV http_proxy http://proxy01.wittag.local:9400
-ENV https_proxy http://proxy01.wittag.local:9400
+#ENV http_proxy http://proxy01.wittag.local:9400
+#ENV https_proxy http://proxy01.wittag.local:9400
 
 # install dependencies
 RUN pip install -r requirements.txt
