@@ -59,7 +59,7 @@ services:
     container_name: cynapse_mqtt_to_influx_index
     build: convertCynapseMqttDataToInfluxDbData
     image: cynapse_mqtt_to_influx
-    #restart: always
+    restart: always
     depends_on:
       - influxdb
       - mosquitto
