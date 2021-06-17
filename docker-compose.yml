@@ -43,11 +43,11 @@ services:
       - ./influxDbBackup/backup:/var/local/influxDbBackup
       - ./data-influxdb/config/influxdb.conf:/etc/influxdb/influxdb.conf
     environment:
-      - INFLUXDB_DB=cynapse
-      - INFLUXDB_USER=cynapse
-      - INFLUXDB_ADMIN_ENABLED=true
-      - INFLUXDB_ADMIN_USER=admin
-      - INFLUXDB_ADMIN_PASSWORD=admin
+      INFLUXDB_DB: cynapse
+      INFLUXDB_USER: cynapse
+      INFLUXDB_ADMIN_ENABLED: "true"
+      INFLUXDB_ADMIN_USER: admin
+      INFLUXDB_ADMIN_PASSWORD: admin
     #  - INFLUXDB_HTTP_FLUX_ENABLED=true
     # - INFLUXDB_HTTP_ENABLED=ture
     # - INFLUXDB_HTTP_BIND_ADDRESS=":8086"
