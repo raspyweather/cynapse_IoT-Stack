@@ -22,7 +22,7 @@ services:
     networks:
       - cynapse-data-network
     volumes:
-      - /home/user/dev/data-grafana:/var/lib/grafana
+      - ./data-grafana:/var/lib/grafana
     environment:
       - GF_AUTH_ANONYMOUS_ENABLED=true
     logging:
@@ -39,9 +39,9 @@ services:
     networks:
       - cynapse-data-network
     volumes:
-      - /home/user/dev/data-influxdb:/var/lib/influxdb
-      - /home/user/dev/influxDbBackup/backup:/var/local/influxDbBackup
-      - /home/user/dev/data-influxdb/config/influxdb.conf:/etc/influxdb/influxdb.conf
+      - ./data-influxdb:/var/lib/influxdb
+      - ./influxDbBackup/backup:/var/local/influxDbBackup
+      - ./data-influxdb/config/influxdb.conf:/etc/influxdb/influxdb.conf
     environment:
       - INFLUXDB_USER=cynapse
       - INFLUXDB_ADMIN_ENABLED=true
@@ -64,7 +64,7 @@ services:
     networks:
       - cynapse-data-network
     volumes:
-      - chronograf-volume:/home/user/dev/data-chonograf
+      - chronograf-volume:./data-chonograf
     depends_on:
       - influxdb
     environment:
