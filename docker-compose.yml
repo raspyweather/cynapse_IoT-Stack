@@ -43,6 +43,7 @@ services:
       - ./influxDbBackup/backup:/var/local/influxDbBackup
       - ./data-influxdb/config/influxdb.conf:/etc/influxdb/influxdb.conf
     environment:
+      - INFLUXDB_DB=cynapse
       - INFLUXDB_USER=cynapse
       - INFLUXDB_ADMIN_ENABLED=true
       - INFLUXDB_ADMIN_USER=admin
@@ -66,7 +67,7 @@ services:
     volumes:
       - ./convertCynapseMqttDataToInfluxDbData/src:/code
     environment:
-      - INFLUX_DATABASE_SERVER=192.168.178.42
+      - INFLUX_DATABASE_SERVER=influxdb
       - INFLUX_DATABASE_SERVER_PORT=8086
       - INFLUX_DATABASE=cynapse
       - MQTT_BROKER=mosquitto
