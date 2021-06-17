@@ -31,7 +31,7 @@ services:
         max-file: "5"
         max-size: "10m"
   influxdb:
-    image: influxdb
+    image: influxdb:latest
     container_name: influxdb
     restart: always
     ports:
