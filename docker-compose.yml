@@ -46,7 +46,7 @@ services:
       - /home/pi/cynapse_IoT-Stack/data-influxdb/config/influxdb.conf:/etc/influxdb/influxdb.conf
     environment:
       INFLUXDB_USER: cynapse
-      INFLUXDB_ADMIN_ENABLED: "true"
+      INFLUXDB_ADMIN_ENABLED: true
       INFLUXDB_ADMIN_USER: admin
       INFLUXDB_ADMIN_PASSWORD: admin
     #  - INFLUXDB_HTTP_FLUX_ENABLED=true
