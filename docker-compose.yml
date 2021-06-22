@@ -1,6 +1,6 @@
 version: "3"
 services:
-  '''mosquitto:
+  mosquitto:
     container_name: mosquitto
     image: eclipse-mosquitto:1.6.14
     restart: always
@@ -31,7 +31,7 @@ services:
         max-file: "5"
         max-size: "10m"
     depends_on:
-      - influxdb'''
+      - influxdb
   influxdb:
     image: influxdb:1.8
     container_name: influxdb
@@ -57,7 +57,7 @@ services:
       options:
         max-file: "5"
         max-size: "10m"
-  '''cynapse_mqtt_to_influx:
+  cynapse_mqtt_to_influx:
     container_name: cynapse_mqtt_to_influx
     build: convertCynapseMqttDataToInfluxDbData
     image: cynapse_mqtt_to_influx
@@ -79,6 +79,6 @@ services:
       driver: "json-file"
       options:
         max-file: "5"
-        max-size: "10m"'''
+        max-size: "10m"
 networks:
   cynapse-data-network:
