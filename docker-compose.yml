@@ -13,7 +13,7 @@ services:
       - /home/pi/cynapse_IoT-Stack/data-mosquitto/data:/mosquitto/data
       - /home/pi/cynapse_IoT-Stack/data-mosquitto/log:/mosquitto/log
   grafana:
-    image: grafana/grafana:latest
+    image: grafana/grafana
     container_name: grafana
     restart: always
     ports:
