@@ -56,6 +56,27 @@ services:
       options:
         max-file: "5"
         max-size: "10m"
+  chronograf:
+    image: chronograf
+    container_name: chronograf
+    restart: always
+    ports:
+      - 8888:8888
+    networks:
+      - cynapse-data-network
+    volumes:
+      - chronograf-volume:/home/pi/cynapse_IoT-Stack/data-chronograf
+    depends_on:
+      - influxdb
+    environment:
+      - INFLUXDB_URL=http://influxdb:8086
+      - INFLUXDB_USERNAME=admin
+      - INFLUXDB_PASSWORD=admin
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
   cynapse_mqtt_to_influx:
     container_name: cynapse_mqtt_to_influx
     build: convertCynapseMqttDataToInfluxDbData
